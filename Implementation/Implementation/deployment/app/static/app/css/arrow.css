@@ -1,0 +1,59 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+ul li{
+    list-style: none;
+    width: 80px;
+    height: 80px;
+    background: #262626;
+    margin: 0 10px;
+    border-radius: 50%;
+    transition: .5s;
+}
+ ul li:hover
+ {
+     background: #0070ff;
+ }
+ ul li span{
+     position: absolute;
+     width: 20px;
+     height: 20px;
+     border: 4px solid #fff;
+     transition: .5s;
+ }
+ul li bold{
+     position: absolute;
+     width: 20px;
+     height: 20px;
+     border: 4px solid #fff;
+     transition: .5s;
+ }
+ ul li.prev span{
+     top: 50%;
+     left: 30%;
+     transform: translateY(-50%) rotate(-45deg);
+     border-right: none;
+     border-bottom: none;
+ }
+   ul li.prev bold{
+     top: 50%;
+     left: 30%;
+     transform: translateY(-10%) rotate(0deg);
+     border-right: none;
+     border-bottom: none;
+ }
+ ul li.prev:hover span{
+     left: 16%;
+ }
+

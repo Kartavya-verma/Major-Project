@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css'>
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&amp;subset=latin,latin-ext'><link rel="stylesheet" href="{% static 'app/css/style2.css' %}">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!--Owl Carousel CSS-->
+    <link rel="stylesheet" href="{% static 'app/css/owl.carousel.min.css' %}">
+
+    <!--FontAwesome CSS-->
+    <link rel="stylesheet" href="{% static 'app/css/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'app/css/fontawesome.min.css' %}">
+
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{% static 'app/css/arrow.css' %}">
+    <style>
+        body{
+        background-image: url("{% static 'app/images/images2.jpg' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+        #login{
+        background-image: url(https://images.financialexpress.com/2021/01/insurance-representative-1.jpg);
+        }
+    </style>
+    
+</head>
+<body>
+    <ul>
+            <a href="{% url 'index' %}"><li class="prev"><span><bold></bold></span></li></a>
+    </ul>
+    <div id="login">
+        <!-- partial:index.partial.html -->
+        <div class="header-icon">
+              <a href="https://www.mockplus.com">
+                <i class="iconfont icon_logo"></i>
+              </a>
+            </div>
+        <div class="materialContainer">
+
+
+           <div class="box">
+              {% if form.non_field_errors %}
+               {% for error in form.non_field_errors %}
+                <p class="alert alert-danger my-3">{{error}}</p>
+               {% endfor %}
+              {% endif %}
+              <div class="title">LOGIN</div>
+
+             <form action="" novalidate method="post" >
+              {% csrf_token %}
+              {% for fm in form %}
+               <div class="input">
+                {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small><span class="spin"></span>
+                <br>
+               </div>
+              {% endfor %}
+               <br><small><a href="{% url 'password_reset' %}">Forgot Password ?</a> </small><br>
+
+
+        <!--      <input type="submit" class="btn btn-primary mt-4" value="Login">-->
+              <div class="button login">
+                 <button type="submit"><span>LOGIN</span> <i class="fa fa-check"></i></button>
+              </div>
+              <br>
+              <div class="new_user text-center text-primary fw-bold"><small>New User ? <a href="{% url 'customerregistration'%}"  class="text-danger" >Create an Account</a> </small></div>
+
+
+             </form>
+
+        <!-- partial -->
+          <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script><script  src="{% static 'app/js/script.js' %}"></script>
+                </div>
+                </div>
+    </body>
+</html>
